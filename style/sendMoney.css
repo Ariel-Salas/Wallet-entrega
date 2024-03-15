@@ -1,0 +1,748 @@
+/* Se creo un elemento raíz para que estas variables globales esten disponibles en todo el css */
+
+:root {
+    
+  --card-padding: 1.6rem;
+  --padding-1: 1rem;
+  --padding-2: 8px;
+
+  --card-border-radius: 1.6rem;
+  --border-radius-1: 1rem;
+  --border-radius-2: 6px;
+}
+
+/* selector universal,  selecciona todos los elementos HTML en la página y aplica las reglas especificadas a cada uno de ellos */
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  border: 0;
+  appearance: none;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 12px;
+}
+
+body {
+  
+  color: var(--black);
+  background: linear-gradient(
+    106.37deg,
+    #ffe1bc 29.63%,
+    #ffcfd1 51.55%,
+    #f3c6f1 90.85%
+  );
+ 
+
+
+  
+  font-family: poppins, sans-serif;
+  min-height: 100vh;
+
+
+  
+}
+
+img {
+  width: 100%;
+}
+
+h1 {
+  font-size: 2.2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+}
+
+h4 {
+  font-size: 1rem;
+}
+
+h5 {
+  font-size: 0.86rem;
+  font-weight: 500;
+}
+
+h6 {
+  font-size: 0.76rem;
+}
+
+p {
+  font-size: 0.86rem;
+  color: var(--color-gray-dark);
+}
+
+small {
+  font-weight: 300;
+  font-size: 0.77rem;
+}
+
+
+.middle h1{
+
+  font-size: 1.5rem;
+
+
+
+}
+/* ============= NAV ============ */
+
+
+/* redondear y dar efecto glass */
+nav {
+  width: 100%;
+  background: var(--color-white);
+  padding: 1rem 0;
+  
+
+
+  display: grid;
+  border-radius: 2rem;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border-radius:10px;
+}
+
+nav .nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  width: 96%;
+  margin: 0 auto;
+}
+
+nav img.logo {
+  width: 7rem;
+}
+
+nav .search-bar {
+  background: var(--color-light);
+  padding: var(--padding-2) var(--card-padding);
+  width: 32vw;
+  border-radius: var(--border-radius-2);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--color-gray-light);
+  position: absolute;
+  left: 15%;
+}
+
+nav .search-bar input[type="search"] {
+  color: var(--color-dark);
+  background: transparent;
+  width: 100%;
+}
+
+nav .search-bar input[type="search"]::placeholder {
+  color: var(--color-gray-dark);
+}
+
+nav .profile-area {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+}
+
+nav .profile-area .theme-btn {
+  display: flex;
+  background: var(--color-light);
+  width: 5rem;
+  height: 2rem;
+  border-radius: var(--border-radius-2);
+  cursor: pointer;
+}
+
+nav .profile-area .theme-btn span {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+}
+
+nav .profile-area .theme-btn .active {
+  background: var(--color-dark);
+  border-radius: var(--border-radius-2);
+  color: var(--color-white);
+}
+
+nav .profile-area .profile {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+nav .profile-area .profile-photo {
+  display: block;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+nav .profile-area button {
+  display: none;
+}
+
+/* ===================== ASIDE & SIDEBAR ===================== */
+main {
+  display: grid;
+  grid-template-columns: 16rem auto 30rem;
+  gap: 2rem;
+  width: 96%;
+  margin: 1rem auto 4rem;
+}
+
+
+/* SE ESTABA SOBREESCRIBIENDO EL FONDO QUE SE DEFINICIO PARA .card el ultimo background prevalecia, por loq ue todas serian moradas */
+
+
+
+/* Estilos comunes para todas las tarjetas */
+.card {
+padding: var(--card-padding);
+border-radius: var(--card-border-radius);
+color: white;
+height: 16rem;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+box-shadow: 0 2rem 2rem var(--color-danger-light);
+transition: all 300ms ease;
+min-width: 22rem;
+background-size: cover;
+}
+
+
+/* probando colores para tarjetas  */
+/* Estilos para la tarjeta azul */
+.visa-azul {
+background: linear-gradient(#ff796f, #bd261b)!important;
+}
+
+/* Estilos para la tarjeta dorada */
+.master-card-dorada {
+background: linear-gradient(#a34d2c, #b1c913)!important;
+}
+
+/* Estilos para la tarjeta morada */
+.super-visa-morada {
+background: linear-gradient(#5d70ff, #5719c2)!important;
+}
+
+/* Estilos específicos para cada tarjeta */
+/* Tarjeta azul */
+main section.middle .cards .card.blue-card {
+background: linear-gradient(#ff796f, #bd261b);
+}
+
+/* Tarjeta dorada */
+main section.middle .cards .card.gold-card {
+background: linear-gradient(#a34d2c, #b1c913);
+}
+
+/* Tarjeta morada */
+main section.middle .cards .card.purple-card {
+background: linear-gradient(#5d70ff, #5719c2);
+}
+
+/* Otras reglas de estilo específicas para cada tarjeta pueden ir aquí si es necesario */
+
+/* Estilos comunes para todas las tarjetas y despues se especifica a cada una el background */
+.card {
+padding: var(--card-padding);
+border-radius: var(--card-border-radius);
+color: white;
+height: 16rem;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+box-shadow: 0 2rem 2rem var(--color-danger-light);
+transition: all 300ms ease;
+min-width: 22rem;
+background-size: cover;
+}
+
+/* Estilos para la tarjeta azul */
+.visa-azul {
+background: linear-gradient(#ff796f, #bd261b)!important;
+}
+
+/* Estilos para la tarjeta dorada */
+.master-card-dorada {
+background: linear-gradient(#a34d2c, #b1c913)!important;
+}
+
+/* Estilos para la tarjeta morada */
+.super-visa-morada {
+background: linear-gradient(#5d70ff, #5719c2)!important;
+}
+
+/* tarjeta neutra, mientras se elige tarjeta  */
+main section.middle .cards .card{
+background: url(../img/para\ tarjeta\ morada.png);
+background-position: top center  ;
+background-size: cover;
+
+}
+
+
+/* Estilos específicos para cada tarjeta */
+/* Tarjeta azul */
+main section.middle .cards .card.blue-card {
+background: url(../img/para\ tarjeta\ morada.png);
+background-position: top right  ;
+}
+
+/* Tarjeta dorada */
+main section.middle .cards .card.gold-card {
+background: url(../img/tarjeta\ roja.jpg); 
+ background-position: top center; 
+  background-size: cover;
+}
+
+/* Tarjeta morada */
+main section.middle .cards .card.purple-card {
+background: url(../img/para\ tarjeta\ morada.png);
+  background-position: 18% 90%; 
+}
+
+/* Otras reglas de estilo específicas para cada tarjeta pueden ir aquí si es necesario */
+
+
+
+
+main section.middle .cards .card:hover {
+  box-shadow: none;
+}
+
+main section.middle .card .top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+main section.middle .card .top .left {
+  display: flex;
+  gap: 0.5rem;
+}
+
+main section.middle .card .top .left h2 {
+  font-weight: 200;
+  font-size: 1.4rem;
+}
+
+main section.middle .card .top .left img {
+  width: 2.3rem;
+  /* height: 2.3rem; */
+  /* border: 1px solid white; */
+  border-radius: var(--border-radius-2);
+  padding: 0.4rem;
+}
+
+main section.middle .card .top img.right {
+  width: 3.5rem;
+}
+
+main section.middle .card .middle {
+  display: flex;
+  justify-content: space-between;
+}
+
+main section.middle .card .middle .chip {
+  width: 3.5rem;
+}
+
+main section.middle .card .bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+main section.middle .card .bottom .right {
+  display: flex;
+  gap: 2rem;
+}
+
+
+
+/* probando las tarjetas para las vistas de deposit2  */
+
+/* ============= Media jquery para pantallas hasta 1024px =============== */
+@media screen and (max-width: 1024px) {
+  nav .search-bar {
+    display: none;
+  }
+
+  nav .profile-area {
+    gap: 2rem;
+  }
+
+  nav .profile-area button#menu-btn {
+    display: inline;
+    background: transparent;
+    color: var(--color-dark);
+  }
+
+  main {
+    grid-template-columns: 1fr;
+  }
+
+  main aside {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    z-index: 3;
+    background: var(--color-white);
+    width: 22rem;
+    height: 100vh;
+    box-shadow: 2rem 0 2rem var(--color-primary-light);
+    display: none;
+    animation: showSidebar 500ms ease forwards;
+  }
+
+  @keyframes showSidebar {
+    to {
+      left: 0;
+    }
+  }
+
+  main aside button#close-btn {
+    display: inline-block;
+    width: 3rem;
+    height: 3rem;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 4;
+    background: transparent;
+    color: var(--color-dark);
+  }
+
+  button:hover {
+    cursor: pointer;
+  }
+
+  main aside .sidebar {
+    margin-top: 4rem;
+  }
+
+  main aside .updates {
+    display: none;
+  }
+
+  main section.middle .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  main canvas {
+    margin: 3rem 0 1rem;
+  }
+
+  main section.right .recent-transactions {
+    margin-top: 3rem;
+  }
+}
+
+/* ============= Media jquery para telefonos hasta 600px =============== */
+@media screen and (max-width: 600px) {
+  nav .profile-area {
+    gap: 2.6rem;
+  }
+
+  nav .profile h5,
+  nav .profile span {
+    display: none;
+  }
+
+  main section.middle .cards {
+    grid-template-columns: 1fr;
+  }
+
+  main section.middle .fast-payment {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 3rem;
+    gap: 1.4rem;
+  }
+}
+
+
+
+/* estilos para el monto total */
+/* Estilos para el texto "Total:" */
+#total-text {
+  font-weight: normal;
+  /* color: rgb(35, 76, 200); */
+  color: var(--color-primary);   
+  font-size: 1.2rem;
+  font-family: poppins, sans-serif;
+}
+
+/* Estilos para el número */
+#total-number {
+  font-size: 2.2rem;
+  color: var(--color-primary);   
+  font-weight: 700;
+  font-size: 2.2rem;
+  
+}
+
+
+
+
+/* -------------------desde acá se da el eslilo al formulario--------------------------------- */
+
+
+.container{
+display: flex;
+align-items: center;
+flex-flow: column;
+}
+
+
+.container form{
+  box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+  padding: 20px;
+  width: 480px;
+  padding-top: 110px;
+  display: grid;
+    width: 30%;
+  border-radius: 2rem;
+  background: rgba(255, 255, 255, 0.5);
+  gap: 16px;
+  overflow: hidden;
+
+}
+
+
+
+.container form .inputBox{
+margin-top: 20px;
+}
+
+.container form .inputBox span{
+display: block;
+color:#999;
+padding-bottom: 5px;
+}
+
+.container form .inputBox input,
+.container form .inputBox select{
+width: 150px;
+padding: 10px;
+border-radius: 10px;
+border:1px solid rgba(0,0,0,.3);
+color:#444;
+}
+
+.container form .flexbox{
+display: flex;
+gap:15px;
+}
+
+.container form .flexbox .inputBox{
+flex:1 1 150px;
+}
+
+.container form .submit-btn{
+width: 100%;
+background:linear-gradient(45deg, blueviolet, deeppink);
+margin-top: 20px;
+padding: 10px;
+font-size: 20px;
+color:#fff;
+border-radius: 10px;
+cursor: pointer;
+transition: .2s linear;
+}
+
+.container form .submit-btn:hover{
+letter-spacing: 2px;
+opacity: .8;
+}
+
+.container .card-container{
+margin-bottom: -150px;
+position: relative;
+height: 250px;
+width: 280px;
+}
+
+
+
+.container {
+  display: flex;
+  align-items: center;
+  flex-flow: column;
+}
+
+.container form {
+  box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+  padding: 20px;
+  width: 480px;
+  padding-top: 110px;
+  /* ahora cada entrada estará al lado de la otra */
+  display: inline-block;
+  width: 30%;
+  border-radius: 2rem;
+  background: rgba(255, 255, 255, 0.5);
+  gap: 16px;
+  overflow: hidden;
+}
+
+.container form .inputBox {
+  display: inline-block; /* Alinear los elementos en línea */
+  width: 45%; /* Ancho de cada elemento */
+}
+
+.container form .inputBox span {
+  display: block;
+  color: #999;
+  padding-bottom: 5px;
+}
+
+.container form .inputBox input,
+.container form .inputBox select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,.3);
+  color: #444;
+}
+
+.container form .flexbox {
+  display: flex;
+  gap: 15px;
+}
+
+.container form .flexbox .inputBox {
+  flex: 1;
+}
+
+.container form .submit-btn {
+  width: 100%;
+  background: linear-gradient(45deg, blueviolet, deeppink);
+  margin-top: 20px;
+  padding: 10px;
+  font-size: 20px;
+  color: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: .2s linear;
+}
+
+.container form .submit-btn:hover {
+  letter-spacing: 2px;
+  opacity: .8;
+}
+
+
+  /* lo tube que colocar de nuevo xd */
+.container form .inputBox {
+  display: inline-block;
+  width: 45%;
+  margin-top: 15px;
+  margin-right: 0px;
+  margin-bottom: 15px;
+  margin-left: 10px;
+}
+
+
+/* -------------------Probar estilo Glassmorphism--------------------------------- */
+.container .square {
+
+  position: absolute;
+  backdrop-filter: blur(5px);
+
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  animation: animate 10s linear infinite;
+  animation-delay: calc(-1s * var(--i));
+}
+
+@keyframes animate 
+  {
+
+  0%,100%
+  {
+    transform: translateY(-40px);
+  }                   
+  50%
+  {
+    transform: translateY(40px);
+  }                   
+
+}
+
+
+.container .square:nth-child(1) {
+  top: -50px;
+  right: -60px;
+  width: 100px;
+  height: 100px;
+}
+
+/* posicionado */
+.container .square:nth-child(2) {
+  top: 250px;
+  right: -150px;
+  left: 430px;
+  /* bottom: 50px; */
+  width: 120px;
+  height: 120px;
+  z-index: 2;
+}
+
+
+
+.container .square:nth-child(3) {
+  bottom: 180px;
+  right: 480px;
+  width:  80px;
+  height: 80px;
+  z-index: 2;
+} 
+
+/* posicionado */
+.container .square:nth-child(4) {
+
+  bottom: 40px;
+  left: 500px;
+  width:  50px;
+  height: 50px;
+} 
+
+.container .square:nth-child(5) {
+  top: 100px;
+  left: 545px;
+  width:  60px;
+  height: 60px;
+} 
+
+.container .square:nth-child(6) {
+  top: 100px;
+  left: 940px;
+  width:  100px;
+  height: 100px;
+} 

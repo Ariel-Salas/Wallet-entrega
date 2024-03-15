@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Wallet</title>
+    <!-- MATERIAL ICONS CDN-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp"
+      rel="stylesheet">
+      <!-- GOOGLE FONTS (POPPINS)-->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"> 
+    <!-- STYLESHEET -->
+    <link rel="stylesheet" href="../style/main.css">
+    <link rel="stylesheet" href="../style/apex-Chart.css">
+
+</head>
+<body>
+        <!-- Barra de navegación -->
+            <nav>
+                <div class="container">
+                    <h2> Banco Santiago</h2>
+                   
+                    
+                    <!-- Área de perfil -->
+                    <div class="profile-area">
+                        <!-- Botones de cambio de tema -->
+                        <div class="theme-btn">
+                            <span class="material-icons-sharp active">light_mode</span>
+                            <span class="material-icons-sharp">dark_mode</span>
+                        </div>
+                        <!-- Perfil del usuario -->
+                        <div class="profile">
+                            <div class="profile-photo">
+                                <img src="../img/profit3.png">
+                            </div>
+                            <h5>Invitado</h5>
+                            <span class="material-icons-sharp">expand_more</span>
+                        </div>
+                        <!-- Botón de menú -->
+                        <button id="menu-btn">
+                            <span class="material-icons-sharp">menu</span>
+                        </button>
+                    </div>
+                </div>
+            </nav>
+
+    <!-- Fin de la barra de navegación-->
+
+    <!-- Contenido principal -->
+    <main>
+        <!-- Barra lateral -->
+        <aside>
+            <!-- Botón de cierre -->
+            <button id="close-btn">
+                <span class="material-icons-sharp">close</span>
+            </button>
+
+            <div class="sidebar">
+                <!-- Enlaces de la barra lateral -->
+                <a href="#" class="active">
+                    <span class="material-icons-sharp">dashboard</span>
+                    <h4>MyWallet</h4>
+                </a>
+                <!-- vista de enviar dinero -->
+                <a href="../views/sendMoney.html" id="send-money">
+                    <span class="material-icons-sharp">currency_exchange</span>
+                    <h4>Enviar dinero</h4>
+                </a>
+                <!-- vista para depositar dinero -->
+                <a href="../views/depositMoney.html" class="deposit-link">
+                    <span class="material-icons-sharp">account_balance_wallet</span>
+                    <h4>Desopitar</h4>
+                </a>
+                <!-- vista transcciones -->
+                <a href="../views/transactions2.html" id = "transactions" blank>
+                    <span class="material-icons-sharp">payment</span>
+                    <h4>Transacciones</h4>
+                </a>
+                <!-- de aqui para abajo aún no se implementa -->
+                <a href="#">
+                    <span class="material-icons-sharp"></span>
+                    <h4>Graficos</h4>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp"></span>
+                    <h4>Mensajes</h4>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp"></span>
+                    <h4>Cnetro de ayuda</h4>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">settings</span>
+                    <h4>Configuración</h4>
+                </a>
+            </div>
+            <!-- Fin de la barra lateral izquierda -->
+            
+            <!-- Actualizaciones aún no implementada -->
+            <div class="Savings">
+                <span class="material-icons-sharp">e2eb</span>
+                <h4>Necesitas un credito?</h4>
+                    <a href="#">Pidelo aquí!</a>
+            </div>
+        </aside>
+        <!-------------------- Fin del aside izquierdo ----------------------->
+
+        <!-- Contenido principal del medio para la vista de ussuario -->
+        <section class="middle">
+            <div class="header">
+                <h1>Bienvenido a tu wallet</h1>
+
+                <!-- <input type="date"> -->
+            </div>
+            <!-- Tarjetas -->
+            <div class="cards">
+                <!-- Tarjeta 1 -->
+                <div class="card" id="visa-azul">
+                    <!-- Encabezado  de la tarjetita-->
+                    <div class="top">
+                        <div class="left">
+                            <img src="../img/contactlesss.png">
+                            <h2>débito</h2>
+                        </div>
+                        <img src="../img/visa.png" class="right">
+                    </div>
+                    <!-- Contenido de la tarjeta -->
+                    <div class="middle">
+                        <h1>$0</h1>
+                        <div class="chip">
+                            <img src="../img/card chip.png">
+                        </div>
+                    </div>
+                    <!-- Pie de página  de la tarjeta-->
+                    <div class="bottom">
+                        <div class="left">
+                            <small>Card Holder</small>
+                            <h5>Invitado</h5>
+                        </div>
+                        <div class="right">
+                            <div class="expiry">
+                                <small>Expiry</small>
+                                <h5>08/23</h5>
+                            </div>
+                            <div class="cvv">
+                                <small>CVV</small>
+                                <h5>123</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Fin tarjeta 1-->
+
+                <!-- Tarjeta 2 -->
+                <div class="card" id="master-card-dorada">
+                    <!-- Encabezado  de la tarjetita-->
+                    <div class="top">
+                        <div class="left">
+                            <img src="../img/contactlesss.png">
+                            <h2>crédito</h2>
+                        </div>
+                        <img src="../img/master card.png" class="right">
+                    </div>
+                    <!-- Contenido de la tarjeta -->        
+                    <div class="middle">
+                        <h1>$0</h1>
+                        <div class="chip">
+                            <img src="../img/card chip.png">
+                        </div>
+                    </div>
+                    <!-- Pie de página  de la tarjeta-->
+                    <div class="bottom">
+                        <div class="left">
+                            <small>Card Holder</small>
+                            <h5>Invitado</h5>
+                        </div>
+                        <div class="right">
+                            <div class="expiry">
+                                <small>Expiry</small>
+                                <h5>08/23</h5>
+                            </div>
+                            <div class="cvv">
+                                <small>CVV</small>
+                                <h5>123</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Fin tarjeta 2-->
+
+                <!-- Tarjeta 3 -->
+                <div class="card" id="super-visa-morada">
+                <!-- Encabezado  de la tarjetita-->    
+                    <div class="top">
+                        <div class="left">
+                            <img src="../img/contactlesss.png">
+                            <h2>vista</h2>
+                        </div>
+                        <img src="../img/visa.png" class="right">
+                    </div>
+                    <!-- Contenido de la tarjeta -->
+                    <div class="middle">
+                        <h1>$0</h1>
+                        <div class="chip">
+                            <img src="../img/card chip.png">
+                        </div>
+                    </div>
+                    <!-- Pie de página  de la tarjeta-->
+                    <div class="bottom">
+                        <div class="left">
+                            <small>Card Holder</small>
+                            <h5>Invitado</h5>
+                        </div>
+                        <div class="right">
+                            <div class="expiry">
+                                <small>Expiry</small>
+                                <h5>08/24</h5>
+                            </div>
+                            <div class="cvv">
+                                <small>CVV</small>
+                                <h5>123</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Fin de tarjeta 3-->
+            </div>
+            <!-- Fin de las tarjetas-->
+            
+
+            <!-- reportes mensuales,no implementados aún -->
+            
+            <!-- <div class="monthly-report"> -->
+                <div class="report">
+                    <h3>Ingresos</h3>
+                    <div>
+                        <details>
+                            <h1>$xx.xxx</h1>
+                            <h6 class="success">+3.5%</h6>
+                        </details>
+                        <p class="text-muted"> $26,938 último mes </p>
+                    </div>
+                </div> 
+           
+            </div>
+          
+            <!-- Panel para deposito rápido -->
+            <div class="fast-payment">
+                <h2>Deposito rápido</h2>
+                <div class="badges">
+                    <div class="badge">
+                        <img src="../img/profit2.png" alt="">
+                    </div>
+                    <div class="badge">
+                        <img src="../img/pofit4.png" alt="">
+                    </div>
+                    <div class="badge">
+                        <img src="../img/señor bolainas.png" alt="">
+                    </div>
+                    <div class="badge">
+                        <img src="../img/profit6.png" alt="">
+                    </div>
+                    <div class="badge">
+                        <img src="../img/para fondo.png" alt="">
+                    </div>
+                    <div class="badge">
+                        <img src="../img/jake.png" alt="">
+                    </div>
+                    <div class="badge">
+                        <img src="../img/gatolate2.jpg" alt="">
+                    </div>
+                    <div class="badge">
+                        <span class="material-icons-sharp">add</span>
+                    </div>
+                    
+                </div>
+            </div>
+            <!-- fin panel deposito rápido -->
+
+            <!-- futuro vista transaccionesT -->
+                <div class="chart1">futura vista por definir</div>
+        </section>
+        <!-- Fin del contenido principal del medio para la vista de ussuario -->
+
+        <!--Sectcion, Lado derecho del área -->
+        <section class="right">
+
+            <!-- Grafico de área -->
+            <div class="investments">
+                <div class="header">
+                    <span id="total-text">Total:</span> <span id="total-number"></span>
+                    <a href="#">Más <span class="material-icons-sharp">chevron_right</span></a>
+                </div>
+                <div class="chart"></div>
+                    <div id="chart"></div>  
+                </div>
+            </div>
+            <!-- Fin del grafico de área -->
+            
+            <div class="recent-transactions">
+                <div class="header">
+                    <h2>Futura vista graficos de pai</h2>
+                    <a href="#">More <span class="material-icons-sharp">chevron_right</span>
+                    </a>
+                </div>
+    
+                <div class="transaction">
+                    <div class="service">
+                     
+                    </div>               
+                </div>                             
+            </div>
+            <!-------- fin panel de pai --------->
+        </section>
+        <!-- Fin del lado derecho de la pantalla -->
+    </main>
+    <!--================== Fin del main =====================-->
+
+    <!-- JQUERY  AJAX-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- script para apexchart -->
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <!-- script para apexchart de app.js  -->
+    <script src="../app/apex-Chart.js"> </script>
+    <!-- script para sumar o restar el balance tootal del dinero disponible  -->
+    <script src="../app/totalBalance.js"></script>
+    
+
+    <!-- Pequeño script para que coloque los valores en el html -->
+   <script>
+        $(document).ready(function() {
+        // Recupera el nuevo saldo del almacenamiento local para cada tarjeta y muestra en la ubicación correspondiente
+        let nuevoSaldoVisaAzul = sessionStorage.getItem('nuevoSaldoVisaAzul');
+        if (nuevoSaldoVisaAzul) {
+            $('#visa-azul .middle h1').text('$' + nuevoSaldoVisaAzul);
+        }
+    
+        let nuevoSaldoMasterCardDorada = sessionStorage.getItem('nuevoSaldoMasterCardDorada');
+        if (nuevoSaldoMasterCardDorada) {
+            $('#master-card-dorada .middle h1').text('$' + nuevoSaldoMasterCardDorada);
+        }
+    
+        let nuevoSaldoSuperVisaMorada = sessionStorage.getItem('nuevoSaldoSuperVisaMorada');
+        if (nuevoSaldoSuperVisaMorada) {
+            $('#super-visa-morada .middle h1').text('$' + nuevoSaldoSuperVisaMorada);
+        }
+    });
+    </script>
+
+
+</body>
+</html>

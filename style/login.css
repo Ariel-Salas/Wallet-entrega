@@ -1,0 +1,513 @@
+/* POPPINS FONT */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+*{  
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* crear animacion, cambia propiedad background-image */
+@keyframes cambiarImagen {
+    0% {
+      background-image: url("../img/santiago.jpg");
+    }
+    30% { /* Muestra santiago.jpg durante 30 segundos */
+      background-image: url("../img/santiago.jpg");
+    }
+    33% { /* Inicia la transición a santiago2.jpg */
+      background-image: url("../img/santiago.jpg");
+    }
+    36% { /* Finaliza la transición a santiago2.jpg */
+      background-image: url("../img/santiago2.jpg");
+    }
+    66% { /* Muestra santiago2.jpg durante 30 segundos */
+      background-image: url("../img/santiago2.jpg");
+    }
+    69% { /* Inicia la transición a santiago.jpg */
+      background-image: url("../img/santiago2.jpg");
+    }
+    72% { /* Finaliza la transición a santiago.jpg */
+      background-image: url("../img/santiago.jpg");
+    }
+    100% {
+      background-image: url("../img/santiago.jpg");
+    }
+  }
+
+
+  /* imagen de fondo del login  */
+body{
+    background: url("../img/santiago.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow: hidden;
+    /* esta animacion es muy rigida, probar con easi-in-out */
+    /* animation: cambiarImagen 5s linear infinite; */
+
+    animation: cambiarImagen 35s ease-in-out infinite alternate;
+}
+
+
+
+/* estilo para la clase wrapper que contiene todo  */
+.wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 110vh;
+    background: rgba(39, 39, 39, 0.4);
+}
+
+/* estilo para la barra de navegación */
+.nav{
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 100px;
+    line-height: 100px;
+    background: linear-gradient(rgba(39,39,39, 0.6), transparent);
+    z-index: 100;
+}
+.nav-logo p{
+    color: white;
+    font-size: 25px;
+    font-weight: 600;
+}
+.nav-menu ul{
+    display: flex;
+}
+.nav-menu ul li{
+    list-style-type: none;
+}
+.nav-menu ul li .link{
+    text-decoration: none;
+    font-weight: 500;
+    color: #fff;
+    padding-bottom: 15px;
+    margin: 0 25px;
+}
+.link:hover, .active{
+    border-bottom: 2px solid #fff;
+}
+.nav-button .btn{
+    width: 130px;
+    height: 40px;
+    font-weight: 500;
+    background: rgba(255, 255, 255, 0.4);
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+/* efecto hover para el background */
+.btn:hover{
+    background: rgba(255, 255, 255, 0.3);
+}
+#registerBtn{
+    margin-left: 15px;
+}
+.btn.white-btn{
+    background: rgba(255, 255, 255, 0.7);
+}
+.btn.btn.white-btn:hover{
+    background: rgba(255, 255, 255, 0.5);
+}
+.nav-menu-btn{
+    display: none;
+}
+
+
+
+/* estilo para el formulario */
+.form-box{
+    position: relative;
+    display: flex;
+    /* en vez de colcoar center tube que colocar normal, porque se descuadraba */
+    align-items: flex-start;
+    justify-content: center;
+    width: 410px;
+    height: 420px;
+    overflow: hidden;
+    z-index: 2;
+}
+.login-container{
+    position: absolute;
+    left: 4px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    transition: .5s ease-in-out;
+}
+.register-container{
+    position: absolute;
+    right: -520px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    transition: .5s ease-in-out;
+}
+.top span{
+    color: #fff;
+    font-size: small;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+}
+.top span a{
+    font-weight: 500;
+    color: #fff;
+    margin-left: 5px;
+}
+header{
+    color: #fff;
+    font-size: 30px;
+    text-align: center;
+    padding: 10px 0 30px 0;
+}
+.two-forms{
+    display: flex;
+    gap: 10px;
+}
+.input-field{
+    font-size: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    height: 50px;
+    width: 100%;
+    padding: 0 10px 0 45px;
+    border: none;
+    border-radius: 30px;
+    outline: none;
+    transition: .2s ease;
+}
+.input-field:hover, .input-field:focus{
+    background: rgba(255, 255, 255, 0.25);
+}
+::-webkit-input-placeholder{
+    color: #fff;
+}
+.input-box i{
+    position: relative;
+    top: -35px;
+    left: 17px;
+    color: #fff;
+}
+.submit{
+    font-size: 15px;
+    font-weight: 500;
+    color: black;
+    height: 45px;
+    width: 100%;
+    border: none;
+    border-radius: 30px;
+    outline: none;
+    background: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    transition: .3s ease-in-out;
+}
+.submit:hover{
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 1px 5px 7px 1px rgba(0, 0, 0, 0.2);
+}
+.two-col{
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+    font-size: small;
+    margin-top: 10px;
+}
+.two-col .one{
+    display: flex;
+    gap: 5px;
+}
+.two label a{
+    text-decoration: none;
+    color: #fff;
+}
+.two label a:hover{
+    text-decoration: underline;
+}
+
+
+/* Media query para dispositivos con un ancho máximo de 786px */
+@media only screen and (max-width: 786px){
+
+    /* Ocultar los botones de navegación en dispositivos móviles */
+    .nav-button{
+        display: none;
+    }
+    
+    /* Estilos para el menú de navegación cuando está en modo responsive */
+    .nav-menu.responsive{
+        top: 100px; /* Desplazar el menú hacia abajo */
+    }
+    
+    /* Estilos para el menú de navegación en dispositivos móviles */
+    .nav-menu{
+        position: absolute; /* Posición absoluta */
+        top: -800px; /* Desplazar el menú fuera de la pantalla */
+        display: flex; /* Mostrar como flexbox */
+        justify-content: center; /* Centrar horizontalmente */
+        background: rgba(255, 255, 255, 0.2); /* Fondo semi-transparente */
+        width: 100%; /* Ancho completo */
+        height: 90vh; /* Altura del 90% del viewport */
+        backdrop-filter: blur(20px); /* Efecto de desenfoque */
+        transition: .3s; /* Transición suave */
+    }
+    
+    /* Estilos para los elementos de la lista del menú */
+    .nav-menu ul{
+        flex-direction: column; /* Mostrar elementos en columna */
+        text-align: center; /* Centrar texto */
+    }
+    
+    /* Estilos para el botón del menú en dispositivos móviles */
+    .nav-menu-btn{
+        display: block; /* Mostrar el botón */
+    }
+    
+    /* Estilos para el icono del botón del menú en dispositivos móviles */
+    .nav-menu-btn i{
+        font-size: 25px; /* Tamaño del icono */
+        color: #fff; /* Color blanco */
+        padding: 10px; /* Espaciado interno */
+        background: rgba(255, 255, 255, 0.2); /* Fondo semi-transparente */
+        border-radius: 50%; /* Forma de círculo */
+        cursor: pointer; /* Cursor apuntador */
+        transition: .3s; /* Transición suave */
+    }
+    
+    /* Estilos al pasar el cursor sobre el icono del botón del menú en dispositivos móviles */
+    .nav-menu-btn i:hover{
+        background: rgba(255, 255, 255, 0.15); /* Fondo semi-transparente al pasar el cursor */
+    }
+}
+
+
+
+
+
+/* Media query para dispositivos con un ancho máximo de 570px */
+@media only screen and (max-width: 570px) {
+    /* Ajustar la altura mínima del contenedor principal para ocupar el 100% del viewport */
+    .wrapper{
+        min-height: 100vh;
+        /* overflow: y; */
+    }
+    
+    /* Ajustes para el formulario en dispositivos móviles */
+    .form-box{
+        width: 100%; /* Ancho completo */
+        height: 320px; /* Altura fija */
+        /* overflow-y: scroll; */ /* Agregar desplazamiento vertical si es necesario */
+    }
+    
+    /* Ajustes para los contenedores de registro e inicio de sesión en dispositivos móviles */
+    .register-container, .login-container{
+        width: 100%; /* Ancho completo */
+        padding: 0 20px; /* Añadir relleno horizontal */
+    }
+    
+    /* Ajustes para el diseño de formulario de registro en dispositivos móviles */
+    .register-container .two-forms{
+        flex-direction: column; /* Mostrar los campos en columna */
+        gap: 0; /* Eliminar espacio entre los campos */
+    }
+}
+
+/* Estilos para la barra de navegación en todas las pantallas */
+.nav {
+    position: fixed; /* Posición fija */
+    top: 0; /* Fijar en la parte superior */
+    display: flex; /* Mostrar como flexbox */
+    justify-content: space-around; /* Distribuir el espacio entre los elementos */
+    width: 100%; /* Ancho completo */
+    height: 50px; /* Altura fija */
+    line-height: 50px; /* Ajustar la altura de la línea */
+    background: linear-gradient(rgba(39, 39, 39, 0.6), transparent); /* Fondo degradado */
+    z-index: 100; /* Colocar encima de otros elementos */
+}
+
+
+
+/* Estilos para dispositivos con ancho de pantalla de hasta 200px como apple watch */
+@media only screen and (max-width: 200px) {
+    /* Estilo para el logotipo en la barra de navegación */
+    
+    html {
+        overflow-y: scroll; /* Habilita el desplazamiento vertical */
+        height: 100%; /* Ajusta la altura del html al 100% de la ventana */
+    }
+
+    /* Estilo para la barra de navegación */
+    .nav {
+        position: fixed;
+        top: 0;
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        height: 50px;
+        line-height: 50px; /* Ajusta la altura de la línea */
+        background: linear-gradient(rgba(39, 39, 39, 0.6), transparent);
+        z-index: 100;
+    }
+
+
+
+    .nav-logo p {
+        font-size: 10px; /* Tamaño de fuente más pequeño para la frase BANCO SANTIAGO */
+    }
+
+    /* Estilo para los elementos del menú de navegación */
+    .nav-menu ul li a {
+        font-size: 5px; /* Tamaño de fuente más pequeño */
+        margin: 0 5px; /* Reducir el margen entre elementos */
+    }
+
+    /* Estilo para los botones de inicio de sesión y registro */
+    .btn {
+        font-size: 10px; /* Tamaño de fuente más pequeño */
+        width: 10px; /* Reducir el ancho del botón */
+        height: 5px; /* Reducir la altura del botón */
+    }
+
+    /* Estilo para el contenedor del formulario de inicio de sesión */
+    .login-container {
+        width: 155px; /* Reducir el ancho del contenedor del formulario */
+    }
+
+    /* Estilo para los campos de entrada del formulario */
+    .input-field {
+        font-size: 10px; /* Tamaño de fuente más pequeño */
+        height: 25px; /* Reducir la altura del campo de entrada */
+    }
+
+    /* Estilo para los enlaces en el pie de página */
+    .top span a {
+        font-size: 10px; /* Tamaño de fuente más pequeño */
+    }
+
+
+.top header {
+    color: #fff;
+    font-size: 25px;
+    text-align: center;
+    padding: 10px 0 30px 0;
+}
+
+
+    /* Estilos para el contenedor del formulario */
+    .form-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centra verticalmente el contenido */
+        justify-content: center; /* Centra horizontalmente el contenido */
+        height: 100vh; /* Ajusta el formulario al tamaño de la ventana */
+        overflow-y: scroll; /* Habilita el desplazamiento vertical */
+        overflow-x: scroll;
+
+    }
+
+    /* Ajusta la altura de .wrapper para que sea igual a la altura de la pantalla */
+
+    .nav-menu {
+        position: absolute;
+        top: -800px;
+        display: flex;
+        justify-content: center;
+        background: rgba(255, 255, 255, 0.2);
+        width: 100%;
+        height: 90vh;
+        backdrop-filter: blur(7px);
+        transition: .6s;
+    }
+
+    /* para el menu responsive */
+    .nav-menu ul li .link {
+        text-decoration: none;
+        font-weight: 500;
+        color: #fff;
+        padding-bottom: 15px;
+        margin: 0 25px;
+        font-size: medium;
+    }
+
+
+    /* Estilos adicionales para el menú de navegación en pantallas pequeñas */
+    .nav-menu.responsive {
+        overflow-y: scroll; /* Habilita el desplazamiento vertical */
+        /* overflow-x: scroll; */
+        align-items: normal; /* Restablece la alineación vertical */
+        top:50px;
+    }
+
+/* Estilos para el ícono del botón de menú de navegación */
+    .nav-menu-btn i {
+        font-size: 15px; /* Tamaño de fuente del ícono */
+        color: #ffffff;
+        padding: 10px;
+        background: rgba(255, 255, 255, 0.2); /* Fondo semitransparente */
+        border-radius: 50%; /* Borde redondeado */
+        cursor: pointer;
+        transition: .3s; /* Transición suave */
+    }
+
+/* Estilos para el ícono dentro de la caja de entrada */
+    .input-box i {
+        
+            position: relative; 
+            top: -23px;  
+            left: 14px; 
+            color: #fff;
+    }
+
+/* Estilos para las opciones de dos columnas */
+    .two-col {
+        display: flex; /* Muestra como flexbox */
+        justify-content: space-between; /* Distribuye uniformemente los elementos muy importantge */
+        color: #fff; /* Color del texto se eligio para que resaltara con el color de fondo */
+        font-size: x-small; /* Tamaño de fuente más pequeño */
+        margin-top: 15px; /* Margen superior para que calzara con el apple watch 6 */
+        margin-left: 20px;              
+    }
+
+
+/* Estilos para las opciones de una columna */
+    .one{
+        display: flex; /* Muestra como flexbox */
+        justify-content: space-between; /* Distribuye uniformemente los elementos muy importantge */
+        color: #fff;  
+        font-size: x-small; 
+        margin-top: 15px; 
+    }
+
+
+
+    /* Estilos para las opciones de dos */
+    .two {
+        display: flex; /* Muestra como flexbox */
+        justify-content: space-between; /* Distribuye uniformemente los elementos */
+        color: #fff;  /* Color del texto */
+        font-size: x-small; /* Tamaño de fuente más pequeño */
+        margin-top: 50px; /* Margen superior */
+        margin-left: -70px; /* Margen izquierdo */
+        margin-bottom: 26px; /* Margen inferior */
+    }
+
+
+
+    /* Estilos adicionales para el checkbox de recordar sesión */
+    #login-check{
+
+        margin-top: -26px; /* Margen superior negativo */
+        margin-bottom: 50px; /* Margen inferior */
+    }
+   
+}
+

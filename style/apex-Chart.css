@@ -1,0 +1,17 @@
+/* Se adapto al div correspondiente */
+
+#chart {
+  height: 380px;
+  max-width: 100%;
+  margin-top: 2rem;
+  border-radius: var(--card-border-radius);
+  padding: var(--card-padding);
+  background: rgba(255, 255, 255, 0.1);
+
+  /* Ocultar las líneas de la cuadrícula del eje Y y X */
+  .apexcharts-gridline {
+    display: none;
+  }
+}
+
+ 

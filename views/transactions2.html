@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Historial de transacciones </title>
+    <link rel="stylesheet" type="text/css" href="../style/transactions2.css">
+</head>
+
+<body>
+    <!-- Encabezado de la tabla -->
+    <main class="table" id="customers_table">
+        <section class="table__header">
+            <!-- Título de la tabla -->
+            <h1>Historial de transacciones</h1>
+            <!-- Campo de búsqueda -->
+            <div class="input-group">
+                <input type="search" placeholder="Search Data...">
+                <img src="../img/search.png" alt="">
+            </div>
+            <!-- Opciones de exportación de archivo no implementado aún-->
+          
+        </section>
+        <!-- Cuerpo de la tabla -->
+        <section class="table__body">
+            <table>
+                <thead>
+                    <!-- Encabezados de las columnas -->
+                    <tr>
+                        <th> Fecha <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Nombre <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Banco <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Rut <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Tipo <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Monto <span class="icon-arrow">&UpArrow;</span></th>
+                    </tr>
+                </thead>
+                <tbody id="transaction_rows">
+                <!-- Las filas se llenarán dinámicamente aquí -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <script src="../app/captureDataTransaction.js"></script>
+    <script src="../app/searchNameTranserf.js"></script>
+    <script src="../app/captureDataTransactionDeposit.js"></script>
+
+
+    <script>
+        // Recupera los datos almacenados en sessionStorage y los muestra en la tabla
+        let tableBody = document.getElementById('transaction_rows');
+        for (let i = 0; i < sessionStorage.length; i++) {
+            let key = sessionStorage.key(i);
+            if (key.startsWith('transfer_')) { // Verifica si la clave comienza con 'transfer_'
+                let data = JSON.parse(sessionStorage.getItem(key));
+                let newRow = tableBody.insertRow();
+                newRow.innerHTML = `
+                    <td>${data.fecha}</td>
+                    <td>${data.nombreDestinatario}</td>
+                    <td>${data.bancoDestino}</td>
+                    <td>${data.rutDestinatario}</td>
+                    <td>${data.tipo}</td>
+                    <td>${data.monto}</td>
+                `;
+            }
+        }
+    </script>
+</body>
+
+</html>

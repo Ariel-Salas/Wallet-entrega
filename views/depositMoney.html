@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- MATERIAL ICONS CDN en esta vista solo tiene el icono al lado de la foto del usuario-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp"
+      rel="stylesheet">
+      <!-- GOOGLE FONTS (POPPINS)-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"> 
+    <!-- estilos de css -->
+    <link rel="stylesheet" href="../style/depositMoney.css">
+
+
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <nav>
+        <div class="nav-container">
+            <!-- Título del banco -->
+            <h2> Banco Santiago</h2>
+            <!-- Barra de búsqueda -->
+            
+            <!-- Área del perfil -->
+            <div class="profile-area">
+                
+                <!-- Información del perfil -->
+                <div class="profile">
+                                        <!-- Foto de perfil -->
+                    <div class="profile-photo">
+                        <img src="../img/profit3.png">
+                    </div>
+                    <!-- Nombre de usuario -->
+                    <h5>Invitado</h5>
+                    <!-- Icono de expansión del perfil -->
+                    <span class="material-icons-sharp">expand_more</span>
+                </div>
+                <!-- Botón de menú -->
+                <button id="menu-btn">
+                    <span class="material-icons-sharp">menu</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+<!-- Contenedor principal para depositar dinero a cuentas -->
+<div class="container">
+        <!-- Contenedor de tarjetas -->
+    <div class="card-container">
+        <main>
+            <!--------------------Inicio tarjetas ----------------------->
+            <!-- Sección de tarjetas -->
+            <section class="middle">          
+                    
+                 <div class="cards">
+                    <!-- Tarjeta individual -->
+                    <div class="card">
+                        <!-- Encabezado de la tarjeta -->
+                        <div class="top">
+                            <!-- Parte izquierda del encabezado -->
+                            <div class="left">
+                                <!-- Icono de tarjeta sin contacto -->
+                                <img src="../img/contactlesss.png">
+                                <!-- Monto de la tarjeta que se carga de forma dinámica -->
+                                <h2></h2>
+                            </div>
+                            <!-- Icono de la marca de la tarjeta -->
+                            <img src="../img/visa.png" class="right">
+                        </div>
+                        <!-- Cuerpo de la tarjeta -->
+                        <div class="middle" >
+                            <h1>Elige tu cuenta</h1>
+                            <div class="chip">
+                                <img src="../img/card chip.png">
+                            </div>
+                        </div>
+                        <div class="bottom">
+                            <!-- Información del titular de la tarjeta -->
+                            <div class="left">
+                                <small>Card Holder</small>
+                                <h5>Invitado</h5>
+                            </div>
+                            <!-- Información de vencimiento y CVV -->
+                            <div class="right">
+                                <div class="expiry">
+                                    <small>Expiry</small>
+                                    <h5>08/23</h5>
+                                </div>
+                                <div class="cvv">
+                                    <small>CVV</small>
+                                    <h5>123</h5>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+      </main>
+    </div>
+
+    <!-- Formulario de depósito -->
+                <!-- divs para efecto Glassmorphism -->  
+                <div class="square" style="--i:0;"></div>
+                <div class="square" style="--i:1;"></div>
+                <div class="square" style="--i:2;"></div>
+                <div class="square" style="--i:3;"></div>
+                <div class="square" style="--i:4;"></div>
+                <div class="square" style="--i:5;"></div>
+                
+    <form id="deposit-form" action="">
+        <div class="inputBox">
+            <!-- Campo de entrada para el monto a depositar -->
+            <span>Monto a depositar</span>
+            <input type="text" class="card-holder-input">
+        </div>
+        <!-- Contenedor para seleccionar la cuenta de depósito -->
+        <div class="flex">
+            <div class="inputBox">
+                <span>Elegir cuenta deposito</span>
+                <!-- id para identificarlo para el jquery -->
+                <select name="" id="account" class="month-input">
+                    <option value="month" selected disabled>Cuenta</option>
+                    <option value="01">Visa Azul</option>
+                    <option value="02">Master Card Dorada</option>
+                    <option value="03">Super Visa Morada</option>
+                </select>
+            </div>
+        </div>
+        <!-- Botón de envío del formulario -->
+        <input type="submit" value="enviar" class="submit-btn">
+    </form>
+  
+</div>    
+    
+
+<!-- script para ajax -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- para cambiar tarjeta -->
+<script src="../app/changeCard.js"></script>
+<!-- Jquery para depositar a las cuentas del usuario -->
+<script src="../app/depositMoney.js"></script>
+<!-- Jquery para capturar lso datos de deposito -->
+<script src="../app/captureDataTransactionDeposit.js"></script>
+
+
+</body>
+</html>

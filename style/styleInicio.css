@@ -1,0 +1,14 @@
+
+.boton ul li {
+    border: 1px solid black;
+    padding: 5px 15px;
+    margin: 5px 5px;
+    display: inline-block;
+    transition: all 0.3s ease-in-out;
+
+}
+
+.boton ul li:hover {
+    background: bisque;
+
+}

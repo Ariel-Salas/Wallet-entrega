@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Metadatos -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Fuentes y estilos -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> -->
+    <link href='https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap' rel='stylesheet'>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Estilos personalizados de css  -->
+    <link rel="stylesheet" href="style/login.css"> 
+    <title>Banco Santiago | Sesión & Registro</title>
+</head>
+
+<body>
+<div class="wrapper">
+    <!-- Barra de navegación -->
+    <nav class="nav">
+        <!-- Logo -->
+        <div class="nav-logo">
+            <p>BANCO SANTIAGO</p>
+        </div>
+        <!-- Menú -->
+        <div class="nav-menu" id="navMenu">
+            <ul>
+                <!-- Enlaces -->
+                <li><a href="#" class="link active">Home</a></li>
+                <li><a href="#" class="link">Blog</a></li>
+                <li><a href="#" class="link">Servicios</a></li>
+                <li><a href="#" class="link">Acerca de nosotros</a></li>
+            </ul>
+        </div>
+        <!-- Botones de inicio de sesión y registro -->
+        <div class="nav-button">
+            <button class="btn white-btn" id="loginBtn" onclick="showLogin()">Iniciar sesión</button>
+            <button class="btn" id="registerBtn" onclick="showRegister()">Crear cuenta</button>
+        </div>
+        <!-- Botón del menú responsivo en css se pueden adaptar hasta un apple watch -->
+        <div class="nav-menu-btn">
+            <i class="bx bx-menu" onclick="myMenuFunction()"></i>
+        </div>
+    </nav>
+
+    <!-- Contenedor del formulario -->
+    <div class="form-box">
+        <!-- Formulario de inicio de sesión -->
+        <form id="loginForm" onsubmit="login(); return false;">
+            <div class="login-container" id="login">
+                <div class="top">
+                    <!-- Enlace para registrarse -->
+                    <span>No tienes una cuenta? <a href="#" onclick="showRegister()">Sign Up</a></span>
+                    <header>Iniciar Sesión</header>
+                </div>
+                <!-- Campos de entrada -->
+                <div class="input-box">
+                    <input type="text" id="loginUsernameOrEmail" class="input-field" placeholder="Username or Email">
+                    <i class="bx bx-user"></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" id="loginPassword" class="input-field" placeholder="Password">
+                    <i class="bx bx-lock-alt"></i>
+                </div>
+                <!-- Botón de inicio de sesión -->
+                <div class="input-box">
+                    <input type="submit" class="submit" value="Sign In">
+                </div>
+                <!-- Opciones adicionales -->
+                <div class="two-col">
+                    <div class="one">
+                        <input type="checkbox" id="login-check">
+                        <label for="login-check"> Remember Me</label>
+                    </div>
+                    <div class="two">
+                        <label><a href="#">Olvidaste tu password?</a></label>
+                    </div>
+                </div>
+            </div>
+        </form>
+    
+        <!-- Formulario de registro -->
+        <form id="registerForm" onsubmit="register(); return false;">
+            <div class="register-container" id="register">
+                <div class="top">
+                    <!-- Enlace para iniciar sesión -->
+                    <span>Tienes una cuenta? <a href="#" onclick="showLogin()">Login</a></span>
+                    <header>Sign Up</header>
+                </div>
+                <!-- Campos de entrada -->
+                <div class="two-forms">
+                    <div class="input-box">
+                        <input type="text" id="registerFirstname" class="input-field" placeholder="Firstname">
+                        <i class="bx bx-user"></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="text" id="registerLastname" class="input-field" placeholder="Lastname">
+                        <i class="bx bx-user"></i>
+                    </div>
+                </div>
+                <div class="input-box">
+                    <input type="text" id="registerEmail" class="input-field" placeholder="Email">
+                    <i class="bx bx-envelope"></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" id="registerPassword" class="input-field" placeholder="Password">
+                    <i class="bx bx-lock-alt"></i>
+                </div>
+                <!-- Botón de registro -->
+                <div class="input-box">
+                    <input type="submit" class="submit" value="Register">
+                </div>
+                <!-- Opciones adicionales -->
+                <div class="two-col">
+                    <div class="one">
+                        <input type="checkbox" id="register-check">
+                        <label for="register-check"> Remember Me</label>
+                    </div>
+                    <div class="two">
+                        <label><a href="#">Terminos & condiciones</a></label>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Script para controlar el menú responsivo y los formularios de inicio de sesión y registro -->
+<script>
+    // Función para mostrar el menú responsivo
+    function myMenuFunction() {
+        var i = document.getElementById("navMenu");
+        if(i.className === "nav-menu") {
+            i.className += " responsive";
+        } else {
+            i.className = "nav-menu";
+        }
+    }
+
+    // Variables para los elementos del DOM
+    let a = document.getElementById("loginBtn");
+    let b = document.getElementById("registerBtn");
+    let x = document.getElementById("login");
+    let y = document.getElementById("register");
+
+    // Función para mostrar el formulario de inicio de sesión
+    function showLogin() {
+        x.style.left = "4px";
+        y.style.right = "-520px";
+        a.className += " white-btn";
+        b.className = "btn";
+        x.style.opacity = 1;
+        y.style.opacity = 0;
+    }
+
+    // Función para mostrar el formulario de registro
+    function showRegister() {
+        x.style.left = "-510px";
+        y.style.right = "5px";
+        a.className = "btn";
+        b.className += " white-btn";
+        x.style.opacity = 0;
+        y.style.opacity = 1;
+    }
+
+</script>
+
+<!-- Referenciar script para manejar el almacenamiento local -->
+<script src="app/localStorage.js"></script>
+</body>
+</html>
